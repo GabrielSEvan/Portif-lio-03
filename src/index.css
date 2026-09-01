@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-1: #2f15ed;
+    --color-2: #2310c8;
+    --color-3: #170ba4;
+    --color-4: #0c0580;
+    --color-5: #00005c;
+
+    --accent: #2f15ed;
+    --accent-light: #6854ff;
+    --accent-lighter: #a396ff;
+    --accent-dark: #2310c8;
+    --accent-subtle: rgba(47, 21, 237, 0.12);
+    --accent-glow: rgba(47, 21, 237, 0.35);
+    
+    --bg-dark: #00005c;
+    --bg-canvas: #020228;
+    --card-bg: #070448;
+    --card-border: #170ba4;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #020228;
+    color: #f1f0fa;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif-accent {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 38s linear infinite;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Custom subtle scrollbar with new palette */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020228;
+}
+::-webkit-scrollbar-thumb {
+  background: #0c0580;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f15ed;
+}
+
+/* Subtle background grid & noise pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(47, 21, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(47, 21, 237, 0.05) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(47, 21, 237, 0.18) 1px, transparent 1px);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(47, 21, 237, 0.45);
+}
+
+.glow-blue-sm {
+  box-shadow: 0 0 20px -5px rgba(47, 21, 237, 0.3);
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #ffffff 15%, #9d90ff 55%, #2f15ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #d3ceff 0%, #6854ff 50%, #2f15ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Variable Font & Distortion Classes */
+.font-variable-heading {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-variable-serif {
+  font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.filter-liquid-distortion {
+  filter: url(#liquid-optical-distortion);
+}
